@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Start Learning</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Importa o React -->
+    <script
+      src="https://unpkg.com/react@16/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+
+    <!-- Importa o Babel -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script>
+      const root = document.getElementById("root");
+
+      const titulo = React.createElement("h1", { id: "title" }, "Hello World");
+      const subtitulo = React.createElement(
+        "h2",
+        { id: "subtitle" },
+        "Subtitle"
+      );
+
+      const post = React.createElement("div", null, titulo, subtitulo);
+
+      ReactDOM.render(post, root);
+    </script>
+  </body>
+</html>
