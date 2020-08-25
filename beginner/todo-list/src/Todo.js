@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 
+// Importa o meu componente List
+import List from './components/List';
+
 function Todo() {
   // Estados
   const [text, setText] = useState("");
@@ -32,10 +35,8 @@ function Todo() {
         <button type="submit" onClick={addItem} >Adiciona</button>
       </form>
 
-      <ul className="todo-list" >
-        {/* Cria um "li" para cada item da lista */}
-        {itemsList.map(item => (<li>{item}</li> ))}
-      </ul>
+      {/* Componente List */}
+      <List itemsList={itemsList} />
     </div>
   );
 }
