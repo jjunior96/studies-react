@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import List from './components/List';
 import Form from './components/Form';
 
+import './todo.css';
+
 function Todo() {
   const [itemsList, setItemsList] = useState([]);
   

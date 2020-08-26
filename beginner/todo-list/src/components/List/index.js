@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './styled.css';
+
 function List (props) {
   return(
     <ul className="todo-list" >
