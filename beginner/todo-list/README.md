@@ -1,4 +1,4 @@
-Esse projeto foi desenvolvido para esse [artigo](https://alvesjunior.netlify.app/criando-um-todo-list-com-react/) do meu blog.
+**Esse projeto foi desenvolvido para esse [artigo](https://alvesjunior.netlify.app/criando-um-todo-list-para-entender-o-react/).**
 
 ## Executando
 

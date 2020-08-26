@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import './styled.css';
+
 function Form(props) {
   const [task, setTask] = useState('');
 
@@ -19,7 +21,7 @@ function Form(props) {
 
   return (
     <form>
-      <input type="text" onChange={handleInputTask} value={task} />
+     <input type="text" placeholder="Adicione uma tarefa" onChange={handleInputTask} value={task} />
       <button type="submit" onClick={addItem}>
         Adicionar
       </button>

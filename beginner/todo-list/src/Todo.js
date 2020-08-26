@@ -5,6 +5,8 @@ import List from './components/List';
 import Form from './components/Form';
 import Item from './components/Item';
 
+import './todo.css';
+
 function Todo() {
   const [itemsList, setItemsList] = useState([]);
 
