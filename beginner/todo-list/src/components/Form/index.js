@@ -1,28 +1,30 @@
 import React, { useState } from 'react';
 
 function Form(props) {
-  const [task, setTask] = useState("");
+  const [task, setTask] = useState('');
 
   function handleInputTask(event) {
-    let inputTask = event.target.value;
+    const inputTask = event.target.value;
     setTask(inputTask);
   }
 
   function addItem(event) {
     event.preventDefault();
-    
-    if(task) {
-      props.onAddItem(task)
-      setTask("");
+
+    if (task) {
+      props.onAddItem(task);
+      setTask('');
     }
   }
-  
+
   return (
-    <form >
+    <form>
       <input type="text" onChange={handleInputTask} value={task} />
-      <button type="submit" onClick={addItem} >Adiciona</button>
+      <button type="submit" onClick={addItem}>
+        Adicionar
+      </button>
     </form>
-  )
+  );
 }
 
 export default Form;
