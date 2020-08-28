@@ -1,0 +1,37 @@
+h1 {
+  font-size: 3.2rem;
+}
+
+h2 {
+  margin-top: 2rem;
+  font-size: 2.8rem;
+  color: #fff;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: #f0819b;
+}
+
+#no-acess {
+  color: #bf0404;
+}
+
+.weather-wrapper {
+  margin: 0 auto;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+ul {
+  margin-top: 2.4rem;
+}
+
+li {
+  font-size: 1.6rem;
+  color: #fff;
+}

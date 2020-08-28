@@ -1,0 +1,23 @@
+.square {
+  width: 4.2rem;
+  height: 4.2rem;
+  border: none;
+  margin: 0.07rem;
+  background-color: #4a4e69;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: #fff;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+.square:hover {
+  background-color: #343647;
+}
+
+.square:focus {
+  outline: none;
+}
