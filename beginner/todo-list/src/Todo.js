@@ -1,38 +1,48 @@
-/* eslint-disable no-self-compare */
 import React, { useState } from 'react';
-
-import List from './components/List';
-import Form from './components/Form';
-import Item from './components/Item';
 
 import './todo.css';
 
 function Todo() {
+  const [task, setTask] = useState('');
   const [itemsList, setItemsList] = useState([]);
 
-  function onAddItem(newItem) {
-    const item = new Item(newItem);
-
-    setItemsList([...itemsList, item]);
+  function handleChangeInput(event) {
+    const inputTask = event.target.value;
+    
+    setTask(inputTask);
   }
 
-  function onItemDeleted(item) {
-    const filteredItems = itemsList.filter(
-      itemCurrent => itemCurrent.id !== item.id
-    );
+  function handleAddItemToList(event) {
+    event.preventDefault();
 
-    setItemsList(filteredItems);
+    /**
+     * Evita o usuário adicionar uma tarefa sem nome
+     */
+    if (task) {
+      /**
+       * Adiciona no final no array a nova tarefa
+       */
+      setItemsList([...itemsList, task]);
+      
+      // Limpa o campo de input
+      setTask("");
+    }
   }
 
   return (
-    <div className="todo-wrapper">
-      <h1>ToDo List</h1>
+    <div className="todo-wrapper" >
+      <form onSubmit={handleAddItemToList}>
+        <h1>ToDo</h1>
 
-      <Form onAddItem={onAddItem} />
+        <input type="text" onChange={(event) => handleChangeInput(event)} value={task} />
+        <button type="submit">Add</button>
+      </form>
 
-      <List onItemDeleted={onItemDeleted} itemsList={itemsList} />
+      {itemsList.map((item, index) => (
+        <div key={index} >{item}</div>
+      ))}
     </div>
-  );
+  )
 }
 
 export default Todo;
