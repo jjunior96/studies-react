@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 .todo-wrapper {
   display: flex;
@@ -7,7 +7,6 @@
   margin: 0 auto;
   max-width: 360px;
   padding: 4rem 2rem;
-  /* background-color: #111; */
 }
 
 .todo-wrapper h1 {
@@ -17,7 +16,7 @@
   padding-bottom: 0.5rem;
   border-bottom: 2px solid #4eb879;
   transition: color 0.3s;
-  font-family: "Permanent Marker", cursive;
+  font-family: 'Permanent Marker', cursive;
 }
 
 .todo-wrapper h1:hover {
