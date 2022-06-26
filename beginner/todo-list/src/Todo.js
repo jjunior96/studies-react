@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 
+import Button from './components/Button';
+import Form from './components/Form';
+import Input from './components/Input';
+import List from './components/List';
+
 import './todo.css';
 
 function Todo() {
@@ -27,17 +32,13 @@ function Todo() {
   return (
     <div className="todo-wrapper">
       <h1>ToDo List</h1>
-      <form onSubmit={handleAddItemToList}>
-        <input type="text" placeholder="Adicione uma tarefa" onChange={handleChangeInput} value={task} />
+      <Form onSubmit={handleAddItemToList}>
+        <Input type="text" placeholder="Adicione uma tarefa" onChange={handleChangeInput} value={task} />
 
-        <button type="submit">Adicionar</button>
-      </form>
+        <Button type="submit">Adicionar</Button>
+      </Form>
 
-      <ul className="todo-list" >
-        {itemsList.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
+     <List itemsList={itemsList} />
     </div>
   );
 }
