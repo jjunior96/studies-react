@@ -3,46 +3,43 @@ import React, { useState } from 'react';
 import './todo.css';
 
 function Todo() {
-  const [task, setTask] = useState('');
-  const [itemsList, setItemsList] = useState([]);
+  const [task, setTask] = useState(""); // <------ estado
+  const [itemsList, setItemsList] = useState([]); // <----- será um Array
 
   function handleChangeInput(event) {
     const inputTask = event.target.value;
     
-    setTask(inputTask);
+    setTask(inputTask); // <----- atualizamos o estado "task" atraves de "setTask"
   }
-
+  
+  // Adiciona um novo elemento na lista
   function handleAddItemToList(event) {
-    event.preventDefault();
+    event.preventDefault(); // <----- desabilita o refresh na pagina ao enviar um formulário
 
-    /**
-     * Evita o usuário adicionar uma tarefa sem nome
-     */
-    if (task) {
-      /**
-       * Adiciona no final no array a nova tarefa
-       */
-      setItemsList([...itemsList, task]);
-      
-      // Limpa o campo de input
-      setTask("");
-    }
+    if (!task) { // <----- Se nao tiver vazio, nao faz nada
+      return
+    };
+    
+    setItemsList([...itemsList, task]); // <----- Copia todos os items ja existentes e entao adiociona o novo item
+    setTask(""); // <----- Reseta o valor do input
   }
 
   return (
-    <div className="todo-wrapper" >
+    <div className="todo-wrapper">
+      <h1>ToDo List</h1>
       <form onSubmit={handleAddItemToList}>
-        <h1>ToDo</h1>
+        <input type="text" placeholder="Adicione uma tarefa" onChange={handleChangeInput} value={task} />
 
-        <input type="text" onChange={(event) => handleChangeInput(event)} value={task} />
-        <button type="submit">Add</button>
+        <button type="submit">Adicionar</button>
       </form>
 
-      {itemsList.map((item, index) => (
-        <div key={index} >{item}</div>
-      ))}
+      <ul className="todo-list" >
+        {itemsList.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
     </div>
-  )
+  );
 }
 
 export default Todo;
